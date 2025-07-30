@@ -46,16 +46,13 @@ class MainActivity : ComponentActivity() {
         CometChatUIKit.login("cometchat-uid-1", object : CometChat.CallbackListener<User>() {
             override fun onSuccess(user: User) {
 
-                 //✅ Option 1: Launch One-to-One or Group Chat Screen
-                 val intent = Intent(this@MainActivity, MessageActivity::class.java)
-                 intent.putExtra("uid", "cometchat-uid-1")
-                 startActivity(intent)
+//                  startActivity(Intent(this@MainActivity, ConversationActivity::class.java))
 
-                // ✅ Option 2: Launch Conversation List + Message View (Split-Screen Style)
-                // startActivity(Intent(this@MainActivity, ConversationActivity::class.java))
+//                val intent = Intent(this@MainActivity, MessageActivity::class.java)
+//                intent.putExtra("uid", "cometchat-uid-1")
+//                startActivity(intent)
 
-//                 ✅ Option 3: Launch Tab-Based Chat Experience (Chats, Calls, Users, Groups)
-//                 startActivity(Intent(this@MainActivity, TabbedActivity::class.java))
+               startActivity(Intent(this@MainActivity, TabbedActivity::class.java))
             }
 
             override fun onError(e: CometChatException) {
